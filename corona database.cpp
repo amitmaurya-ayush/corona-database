@@ -68,6 +68,9 @@ int n=0;
 patient y;
 doctor x;
 y.enter();
+cout<<"\n patient name\t"<<y.retname();
+cout<<"\n age\t"<<y.retage();
+cout<<"\n symptom\t"<<y.retsymptom();
 ifstream data;
 data.open("doctor.dat",ios::binary);
 while(data.read((char*)&x,sizeof(x))){
@@ -75,7 +78,8 @@ while(data.read((char*)&x,sizeof(x))){
         n=n+1;
         strcpy(med,x.retmed());
     }
-
+cout<<"\n medicine prescribed\t";
+cout<<med;
     }
     data.close();
 }
